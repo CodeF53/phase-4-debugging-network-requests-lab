@@ -5,7 +5,7 @@ function ToyCard({ toy, onDeleteToy, onUpdateToy }) {
 
   function handleDeleteClick() {
     fetch(`/toys/${id}`, {
-      method: "DELETE",
+      method: "DELETE"
     }).then((r) => {
       if (r.ok) {
         onDeleteToy(toy);
@@ -25,8 +25,8 @@ function ToyCard({ toy, onDeleteToy, onUpdateToy }) {
       },
       body: JSON.stringify(updateObj),
     })
-      .then((r) => r.json())
-      .then((updatedToy) => onUpdateToy(updatedToy));
+    .then((r) => r.json())
+    .then((updatedToy) => onUpdateToy(updatedToy));
   }
 
   return (
